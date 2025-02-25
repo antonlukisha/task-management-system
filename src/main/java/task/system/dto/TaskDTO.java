@@ -34,12 +34,10 @@ public class TaskDTO {
     @Pattern(regexp = "^(HIGH|MEDIUM|LOW)$", message = "Priority type should be: HIGH, MEDIUM, LOW")
     private String priority;
 
-    @Valid
     @NotBlank(message = "Field cannot be empty")
     @Schema(description = "Author of task")
     private String author;
 
-    @Valid
     @NotBlank(message = "Field cannot be empty")
     @Schema(description = "Assignee of task")
     private String assignee;

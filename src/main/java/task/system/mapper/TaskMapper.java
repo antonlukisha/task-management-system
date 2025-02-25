@@ -1,5 +1,6 @@
 package task.system.mapper;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Component;
 import task.system.dto.TaskDTO;
 import task.system.entity.Task;
@@ -7,6 +8,7 @@ import task.system.type.Priority;
 import task.system.type.Status;
 
 @Component
+@Tag(name = "TaskMapper", description = "For mapping between tasks containers")
 public class TaskMapper {
     public TaskDTO toTaskDTO(Task task) {
         return TaskDTO.builder()

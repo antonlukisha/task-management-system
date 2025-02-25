@@ -1,5 +1,6 @@
 package task.system.config;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,7 @@ import task.system.service.implementations.UserDetailsServiceImpl;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+@Tag(name = "SecurityConfig", description = "Configuration for Spring Security Tools")
 public class SecurityConfig {
 
     private final UserDetailsServiceImpl userDetailsService;
@@ -26,15 +28,17 @@ public class SecurityConfig {
             "/swagger*/**",
             "/swagger-ui/**",
             "/backend/swagger-ui.html",
-            "/documentation/**",
-            "/v3/api-docs/**",
+            "/api-docs/**",
+            "/login",
             "/api/login",
-            "/api/register"
+            "/api/register",
+            "/api/tasks/public/**",
+            "/api/tasks/comments/public/**",
     };
 
     public String[] ANOTHER_PATHS = {
-            "/api/tasks/**",
-            "/api/tasks/comments/**",
+            "/api/tasks/protect/**",
+            "/api/tasks/comments/protect/**",
     };
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -42,12 +46,12 @@ public class SecurityConfig {
     }
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((auth) -> {
-            auth.requestMatchers(PERMIT_ALL).permitAll();
-            auth.requestMatchers(ANOTHER_PATHS).hasRole("USER");
-            auth.requestMatchers(ANOTHER_PATHS).hasRole("ADMIN");
-            auth.anyRequest().authenticated();
-        })
+        http
+                .authorizeHttpRequests((auth) -> {
+                    auth.requestMatchers(PERMIT_ALL).permitAll();
+                    auth.requestMatchers(ANOTHER_PATHS).hasAnyRole("ROLE_USER", "ROLE_ADMIN");
+                    auth.anyRequest().authenticated();
+                })
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }

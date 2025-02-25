@@ -29,7 +29,7 @@ public class TaskController {
      *  - If task was created response has status CREATED (201);
      *  - If task was not created response has status BAD_REQUEST (400);
      */
-    @PostMapping
+    @PostMapping("/protect")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Creating a new task",
@@ -49,7 +49,7 @@ public class TaskController {
      *  - If task was updated response has status OK (200);
      *  - If task was not updated response has status BAD_REQUEST (400);
      */
-    @PutMapping("/id")
+    @PutMapping("/protect/id")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Editing an existent task",
@@ -70,7 +70,7 @@ public class TaskController {
      *  - If task was deleted response has status NO_CONTENT (204);
      *  - If task was not deleted response has status BAD_REQUEST (400);
      */
-    @DeleteMapping("/id")
+    @DeleteMapping("/protect/id")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Deleting a task",
@@ -88,7 +88,7 @@ public class TaskController {
      * @param id Identity of task.
      * @return response with status OK (200) and body with dto.
      */
-    @GetMapping("/id")
+    @GetMapping("/protect/id")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Getting a task",
@@ -109,7 +109,7 @@ public class TaskController {
      *  - If performer was assigned  to task response has status OK (200);
      *  - If performer was not assigned to task response has status BAD_REQUEST (404);
      */
-    @PutMapping("/assign/id")
+    @PutMapping("/protect/assign/id")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Assign a user as performer of task",
@@ -129,7 +129,7 @@ public class TaskController {
      * @param size Size number.
      * @return response with status OK (200) and list of tasks.
      */
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     @Operation(
             summary = "Getting all tasks",
             description = "Allow to get all tasks with pagination from db"
@@ -149,7 +149,7 @@ public class TaskController {
      * @param size Size number.
      * @return response with status OK (200) and list of tasks.
      */
-    @GetMapping("/author")
+    @GetMapping("/public/author")
     @Operation(
             summary = "Getting tasks by author",
             description = "Allow to get tasks by author with pagination from db"
@@ -170,7 +170,7 @@ public class TaskController {
      * @param size Size number.
      * @return response with status OK (200) and list of tasks.
      */
-    @GetMapping("/assignee")
+    @GetMapping("/public/assignee")
     @Operation(
             summary = "Getting all tasks by assignee",
             description = "Allow to get all task by assignee with pagination from db"

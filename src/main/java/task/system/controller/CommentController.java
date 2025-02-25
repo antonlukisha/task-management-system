@@ -32,7 +32,7 @@ public class CommentController {
      *  - If comment was added response has status CREATED (201);
      *  - If comment was not added response has status BAD_REQUEST (400);
      */
-    @PostMapping("/add")
+    @PostMapping("/protect/add")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Adding a comment",
@@ -57,7 +57,7 @@ public class CommentController {
      * @param size Size number.
      * @return response with status OK (200) and list of comments.
      */
-    @GetMapping("/task/id")
+    @GetMapping("/public/task/id")
     @Operation(
             summary = "Getting comments of task",
             description = "Allow to get comments of task by ID with pagination",

@@ -5,58 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/TaskManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/CommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/JWTRspDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/LoginRqsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/RegisterRqsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/TaskDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/BaseTaskServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/implementations/CommentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/implementations/JwtTokenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/implementations/TaskException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/implementations/UserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/TaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/repository/TaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/CommentServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/TaskDataServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/TaskServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/UserServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskDataService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/type/Priority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/type/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task/system/type/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/swagger-ui.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/CommentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/TaskManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/TaskManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/dto/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/TaskDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/mapper/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +59,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.TaskManagementApplication.executor": "Run",
+    "JUnit.CommentControllerTest.executor": "Run",
+    "JUnit.CommentServiceTest.add_Failure_BadRequest.executor": "Run",
+    "JUnit.CommentServiceTest.executor": "Run",
+    "JUnit.TaskControllerTest.createTask_shouldReturnBadRequest_whenTaskNotCreated.executor": "Run",
+    "JUnit.TaskControllerTest.createTask_shouldReturnCreated_whenTaskCreatedSuccessfully.executor": "Run",
+    "JUnit.TaskControllerTest.executor": "Run",
+    "JUnit.TaskControllerTest.getTaskById_shouldReturnNotFound_whenTaskNotFound.executor": "Debug",
+    "JUnit.TaskServiceTest.executor": "Run",
+    "JUnit.UserControllerTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -97,7 +77,7 @@
     "project.structure.side.proportion": "0.22988506"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CommentServiceTest.add_Failure_BadRequest">
     <configuration name="TaskManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="task.system.TaskManagementApplication" />
       <module name="TaskManagementSystem" />
@@ -111,9 +91,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.service" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.CommentServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.add_Failure_BadRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.service" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="add_Failure_BadRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.controller" />
+      <option name="MAIN_CLASS_NAME" value="task.system.controller.TaskControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.service" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.TaskServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="Application.TaskManagementApplication" />
+        <item itemvalue="JUnit.TaskControllerTest" />
+        <item itemvalue="JUnit.CommentServiceTest" />
+        <item itemvalue="JUnit.TaskServiceTest" />
       </list>
     </recent_temporary>
   </component>
