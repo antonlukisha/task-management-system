@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/CommentControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/UserControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/task/system/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task/system/TaskManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/TaskManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/dto/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/dto/TaskDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/CommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/mapper/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/mapper/TaskMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +57,7 @@
     "project.structure.side.proportion": "0.22988506"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.CommentServiceTest.add_Failure_BadRequest">
+  <component name="RunManager" selected="Application.TaskManagementApplication">
     <configuration name="TaskManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="task.system.TaskManagementApplication" />
       <module name="TaskManagementSystem" />
@@ -154,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="Application.TaskManagementApplication" />
+        <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="JUnit.TaskControllerTest" />
         <item itemvalue="JUnit.CommentServiceTest" />
         <item itemvalue="JUnit.TaskServiceTest" />
