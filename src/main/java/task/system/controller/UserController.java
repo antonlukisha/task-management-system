@@ -5,6 +5,8 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +26,7 @@ import task.system.service.implementations.UserService;
 @RequestMapping("/api/auth")
 public class UserController {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 
     /**
@@ -42,6 +45,7 @@ public class UserController {
             }
     )
     public ResponseEntity<JWTRspDTO> login(@RequestBody LoginRqsDTO loginDTO) {
+        logger.info("Received login request: {}", loginDTO.toString());
         JWTRspDTO response = userService.authenticate(loginDTO);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -62,6 +66,7 @@ public class UserController {
             }
     )
     public ResponseEntity<JWTRspDTO> register(@RequestBody RegisterRqsDTO registerDTO) {
+        logger.info("Received registration request: {}", registerDTO.toString());
         JWTRspDTO response = userService.registration(registerDTO);
         return new ResponseEntity<>(response,  HttpStatus.CREATED);
     }
@@ -83,6 +88,7 @@ public class UserController {
     @SecurityRequirement(name = "JWT")
     @PostMapping("/refresh")
     public ResponseEntity<JWTRspDTO> refreshAccessToken(@Valid @RequestParam("refresh") String refreshToken) {
+        logger.info("Received refresh request: {}", refreshToken);
         JWTRspDTO response = response = userService.refresh(refreshToken);
         return new ResponseEntity<>(response,  HttpStatus.OK);
     }

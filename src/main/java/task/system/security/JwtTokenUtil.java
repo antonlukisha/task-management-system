@@ -14,18 +14,17 @@ import task.system.exception.implementations.JwtTokenException;
 import java.util.Date;
 
 @Component
-@Tag(name = "JwtTokenUtil", description = "Util for generation and validation check of access/refresh tokens")
 public class JwtTokenUtil {
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenUtil.class);
 
     @Value("${jwt.secret.key}")
-    private static String SECRET_KEY;
+    private String SECRET_KEY;
 
     @Value("${jwt.access.token.expiration}")
-    private static Long ACCESS_TOKEN_EXPIRATION;
+    private Long ACCESS_TOKEN_EXPIRATION;
 
     @Value("${jwt.refresh.token.expiration}")
-    private static Long REFRESH_TOKEN_EXPIRATION;
+    private Long REFRESH_TOKEN_EXPIRATION;
 
     public String generateAccessToken(UserDetails userDetail) {
         return Jwts.builder()

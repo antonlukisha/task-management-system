@@ -1,5 +1,6 @@
 package task.system.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@Schema(title = "Task Entity", description = "Task entity representing a task in the system with serialization")
 @Table(name = "tasks")
 public class Task implements Serializable {
     @Id

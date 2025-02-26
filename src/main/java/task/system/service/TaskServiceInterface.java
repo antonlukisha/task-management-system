@@ -24,7 +24,7 @@ public interface TaskServiceInterface {
 
     /**
      * METHOD: getTaskById.
-     * This method retrieves a task by ID.
+     * This method fetch a task by ID.
      *
      * @param id Identity of the task.
      * @return TaskDTO - Task data transfer object.
@@ -81,7 +81,7 @@ public interface TaskServiceInterface {
 
     /**
      * METHOD: getAllTasks.
-     * This method retrieves a list of all tasks with pagination.
+     * This method fetches a list of all tasks with pagination.
      *
      * @param page The page number to retrieve (starting from 0).
      * @param size The number of tasks per page.
@@ -95,7 +95,7 @@ public interface TaskServiceInterface {
 
     /**
      * METHOD: getTasksByAuthor.
-     * This method retrieves a list of tasks created by a specific author with pagination.
+     * This method fetches a list of tasks created by a specific author with pagination.
      *
      * @param author Author username.
      * @param page The page number to retrieve (starting from 0).
@@ -110,7 +110,7 @@ public interface TaskServiceInterface {
 
     /**
      * METHOD: getTasksByAssignee.
-     * This method retrieves a list of tasks assigned to a specific user with pagination.
+     * This method fetches a list of tasks assigned to a specific user with pagination.
      *
      * @param assignee Assignee username.
      * @param page The page number to retrieve (starting from 0).

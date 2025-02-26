@@ -4,10 +4,11 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import task.system.exception.implementations.CommentException;
 import task.system.exception.implementations.JwtTokenException;
 import task.system.exception.implementations.TaskException;
@@ -16,7 +17,7 @@ import task.system.exception.implementations.UserException;
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice
+@RestControllerAdvice
 @Tag(name = "GlobalExceptionHandler", description = "Controller for catching REST api exceptions")
 public class GlobalExceptionHandler {
     /**

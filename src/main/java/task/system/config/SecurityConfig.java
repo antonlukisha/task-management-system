@@ -8,11 +8,14 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import task.system.security.JwtAuthenticationFilter;
 import task.system.service.implementations.UserDetailsServiceImpl;
 
@@ -21,7 +24,6 @@ import task.system.service.implementations.UserDetailsServiceImpl;
 @RequiredArgsConstructor
 @Tag(name = "SecurityConfig", description = "Configuration for Spring Security Tools")
 public class SecurityConfig {
-
     private final UserDetailsServiceImpl userDetailsService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
@@ -31,13 +33,14 @@ public class SecurityConfig {
             "/backend/swagger-ui.html",
             "/api-docs/**",
             "/login**",
-            "/api/login",
-            "/api/register",
+            "/api/auth/login/",
+            "/api/auth/register/",
             "/api/tasks/public/**",
             "/api/tasks/comments/public/**",
     };
 
     public String[] ANOTHER_PATHS = {
+            "/api/auth/refresh/**",
             "/api/tasks/protect/**",
             "/api/tasks/comments/protect/**",
     };
@@ -50,6 +53,7 @@ public class SecurityConfig {
                     auth.requestMatchers(ANOTHER_PATHS).hasAnyRole("USER", "ADMIN");
                     auth.anyRequest().permitAll();
                 })
+                .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
@@ -67,6 +71,11 @@ public class SecurityConfig {
         authenticationManagerBuilder.userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
         return authenticationManagerBuilder.build();
+    }
+
+    @Bean
+    public MultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
     }
 }
 

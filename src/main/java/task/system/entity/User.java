@@ -1,5 +1,6 @@
 package task.system.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import task.system.type.Role;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Schema(title = "User Entity", description = "User entity representing a user in the system with serialization and implement UserDetails")
 @Builder
 @Table(name = "users")
 public class User implements UserDetails, Serializable {

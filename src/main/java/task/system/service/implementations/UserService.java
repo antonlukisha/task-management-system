@@ -9,9 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,16 +71,19 @@ public class UserService implements UserServiceInterface {
             Authentication authenticate = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword())
             );
-            User user = (User) authenticate.getPrincipal();
+            org.springframework.security.core.userdetails.User foundUser = (org.springframework.security.core.userdetails.User) authenticate.getPrincipal();
             logger.info("User with email {} authenticated successfully. Generating new refresh and access tokens...", loginDTO.getEmail());
-            String token = jwtTokenUtil.generateAccessToken(user);
-            String refreshToken = jwtTokenUtil.generateRefreshToken(user);
-            String role = user.getRole().name();
+            String token = jwtTokenUtil.generateAccessToken(foundUser);
+            String refreshToken = jwtTokenUtil.generateRefreshToken(foundUser);
+            String role = foundUser.getAuthorities().stream()
+                    .map(GrantedAuthority::getAuthority)
+                    .map(r -> r.replace("ROLE_", ""))
+                    .findFirst()
+                    .orElse("USER");
             return JWTRspDTO.builder()
                     .accessToken(token)
                     .refreshToken(refreshToken)
-                    .id(user.getId().toString())
-                    .email(user.getEmail())
+                    .email(foundUser.getUsername())
                     .role(role)
                     .build();
         } catch (AuthenticationException exception) {

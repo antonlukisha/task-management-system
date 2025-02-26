@@ -53,14 +53,15 @@ public class CommentService implements CommentServiceInterface {
     @Transactional
     public boolean add(Long taskId, CommentDTO commentDTO) {
         logger.info("Attempting to add a comment to task ID: {}...", taskId);
-        logger.info("Getting username from Security Context...");
+        logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUsername = authentication.getName();
 
         if (!currentUsername.equals(commentDTO.getAuthor())) {
             logger.error("Incorrect username in DTO: expected {}, but found {}", currentUsername, commentDTO.getAuthor());
-            throw CommentException.of(HttpStatus.BAD_REQUEST, "Incorrect username in DTO");
+            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect username in DTO");
         }
+
 
         Task task = taskDataService.getTaskFromCacheOrDatabase(taskId);
 

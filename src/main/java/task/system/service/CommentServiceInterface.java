@@ -10,7 +10,7 @@ import java.util.List;
 public interface CommentServiceInterface {
     /**
      * METHOD: getByTask
-     * Method to retrieve comments for a given task.
+     * Method to fetch comments for a given task.
      *
      * @param taskId Identity of task.
      * @param page The page number for pagination.
