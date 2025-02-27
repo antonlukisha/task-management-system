@@ -36,12 +36,19 @@ jwt.secret.key=your_jwt_secret_key
 jwt.access.token.expiration=3600000
 jwt.refresh.token.expiration=604800000
 ```
-## :office: Запуск приложения
-1.1 Запустите приложение через `mvn`:
+2. Соберите `docker image`:
 ```bash
-mvn spring-boot:run
+docker build -t your-image-name .
 ```
-1.2. Запустите приложение через `docker compose`:
+3. Настройте конфигурацию в файле `docker-compose.yml`:
+```yml
+version: '3'
+  services:
+    task-management:
+      image: your-image-name:latest
+```
+## :office: Запуск приложения
+1. Запустите приложение через `docker compose`
 ```bash
 docker-compose up --build
 ```
