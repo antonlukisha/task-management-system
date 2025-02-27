@@ -126,7 +126,7 @@ public class TaskServiceTest {
     }
 
     @Test
-    void testDeleteTask_Failure() {
+    void deleteTask_Failure() {
         when(authentication.getAuthorities()).thenReturn((Collection) Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         TaskException exception = assertThrows(TaskException.class, () -> taskService.deleteTask(1L));

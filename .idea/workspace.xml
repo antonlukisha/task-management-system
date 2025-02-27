@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/UserServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +58,7 @@
     "JUnit.UserServiceTest.executor": "Run",
     "JUnit.UserServiceTest.login_Success.executor": "Run",
     "JUnit.UserServiceTest.registration_Success.executor": "Run",
+    "JUnit.java in TaskManagementSystem.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -75,7 +68,7 @@
     "project.structure.side.proportion": "0.22988506"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.CommentServiceTest">
+  <component name="RunManager" selected="JUnit.java in TaskManagementSystem">
     <configuration name="CommentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TaskManagementSystem" />
       <extension name="coverage">
@@ -138,29 +131,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.registration_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in TaskManagementSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TaskManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="task.system.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="task.system.service" />
-      <option name="MAIN_CLASS_NAME" value="task.system.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="registration_Success" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in TaskManagementSystem" />
         <item itemvalue="JUnit.CommentServiceTest" />
         <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.login_Success" />
-        <item itemvalue="JUnit.UserServiceTest.registration_Success" />
       </list>
     </recent_temporary>
   </component>

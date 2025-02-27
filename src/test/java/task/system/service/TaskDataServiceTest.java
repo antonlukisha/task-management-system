@@ -44,5 +44,5 @@ public class TaskDataServiceTest {
                 .assignee("assignee@mail.com")
                 .build();
     }
-    
+
 }
