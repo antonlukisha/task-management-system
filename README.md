@@ -2,133 +2,62 @@
 
 ## Описание
 
-Данный проект представляет собой REST api для управления Task Management System.
+Система управления задачами с использованием JWT для аутентификации. Проект включает функционал для регистрации, логина пользователей, работы с задачами и комментариями. Система также поддерживает refresh токены для восстановления доступа.
 
 ## Содержание
 
-- [Установка и запуск](#установка-и-запуск)
+- [Установка](#установка)
 - [Конфигурация](#конфигурация)
 - [Запуск приложения](#запуск-приложения)
 - [Тестирование](#тестирование)
-- [Дополнительная информация](#дополнительная-информация)
+- [Примечания](#примечания)
 
 ---
 
-## Установка и запуск
+## Установка
 
-   ```bash
-   git clone https://github.com/your-username/project-name.git
-   cd project-name
-   docker-compose up -d
-   ```
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/antonlukisha/task-management-system.git
+cd task-management-system
+```
+2. Создайте базу данных PostgreSQL, например:
+```sql
+CREATE DATABASE task_management;
+```
 ---
-
 ## Конфигурация
-
-1. **Настройки базы данных**
-
-   Убедитесь, что у вас настроена база данных (например, PostgreSQL):
-
-    - **URL** базы данных: `jdbc:postgresql://localhost:5432/your_database`
-    - **Имя пользователя**: `your_username`
-    - **Пароль**: `your_password`
-
-   Отредактируйте файл конфигурации для backend приложения, чтобы указать параметры подключения.
-
-2. **Переменные окружения**
-
-   Для правильной работы приложения могут понадобиться переменные окружения. Пример конфигурации:
-
-   ```bash
-   DB_URL=jdbc:postgresql://localhost:5432/your_database
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   JWT_SECRET_KEY=your_jwt_secret_key
-   ```
-
-   Сохраните эти данные в `.env` файл или добавьте их в настройки среды.
-
-3. **Настройки Swagger**
-
-   Если в проекте используется Swagger для документации API, убедитесь, что пути и фильтры настроены правильно. Например, доступ к Swagger UI будет осуществляться через `/swagger-ui.html` или другой путь.
-
----
-
+1. Настройте конфигурацию подключения к базе данных и JWT в application.properties:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/task_management
+spring.datasource.username=your_db_username
+spring.datasource.password=your_db_password
+jwt.secret.key=your_jwt_secret_key
+jwt.access.token.expiration=3600000
+jwt.refresh.token.expiration=604800000
+```
 ## Запуск приложения
-
-1. **Запуск backend (Spring Boot)**
-
-   В корне проекта выполните команду:
-
-   ```bash
-   mvn spring-boot:run
-   ```
-
-   Приложение будет доступно по адресу:
-    - **Backend**: `http://localhost:8080`
-
-2. **Запуск frontend (если используется React)**
-
-   Перейдите в каталог с фронтендом и выполните команду:
-
-   ```bash
-   npm start
-   ```
-
-   Приложение будет доступно по адресу:
-    - **Frontend**: `http://localhost:3000`
-
+1.1 Запустите приложение через `mvn`:
+```bash
+mvn spring-boot:run
+```
+1.2. Запустите приложение через `docker compose`:
+```bash
+docker-compose up --build
+```
+2. Приложение будет доступно по адресу `http://localhost:8080`
 ---
-
 ## Тестирование
 
-Для запуска тестов, выполните следующие шаги:
-
-1. **Тестирование backend**
-
-   Для тестирования backend используйте команду:
-
-   ```bash
-   mvn test
-   ```
-
-2. **Тестирование frontend**
-
-   В каталоге с frontend выполните команду:
-
-   ```bash
-   npm test
-   ```
-
----
-
-## Дополнительная информация
-
-- **Swagger UI**: Для тестирования API и просмотра документации можно использовать Swagger UI. Откройте браузер и перейдите по следующему URL:
-    - `http://localhost:8080/swagger-ui.html`
-
-- **Docker**: Если проект использует Docker, можно собрать контейнеры с помощью следующих команд:
-
-  Для backend:
-  ```bash
-  docker build -t backend .
-  docker run -p 8080:8080 backend
-  ```
-
-  Для frontend:
-  ```bash
-  docker build -t frontend .
-  docker run -p 3000:3000 frontend
-  ```
-
+Для тестирования backend используйте команду:
+```bash
+mvn test
+```
 ---
 
 ## Примечания
 
-- Если у вас возникли проблемы при запуске, обратитесь к логам, которые помогут диагностировать ошибки.
 - Для более подробной документации и технических решений, смотрите [Swagger API Documentation](http://localhost:8080/swagger-ui.html).
 - Убедитесь, что ваше окружение (например, база данных) настроено корректно перед запуском приложения.
 
 ---
-
-Пример приведён в общем виде. Обновите его с учетом специфики вашего проекта.

@@ -25,7 +25,6 @@ import task.system.service.implementations.UserService;
 @Tag(name = "UserController", description = "Controller as the endpoint of the REST api for working with users")
 @RequestMapping("/api/auth")
 public class UserController {
-
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 

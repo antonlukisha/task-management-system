@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/TaskServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/TaskServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
     "project.structure.side.proportion": "0.22988506"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.TaskManagementApplication">
+  <component name="RunManager" selected="JUnit.TaskServiceTest">
     <configuration name="TaskManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="task.system.TaskManagementApplication" />
       <module name="TaskManagementSystem" />
@@ -139,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TaskServiceTest" />
         <item itemvalue="Application.TaskManagementApplication" />
         <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="JUnit.CommentServiceTest" />
         <item itemvalue="JUnit.TaskControllerTest" />
-        <item itemvalue="JUnit.TaskServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +156,7 @@
     <servers />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Dockerfile" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yml" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
