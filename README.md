@@ -47,6 +47,7 @@ version: '3'
     task-management:
       image: your-image-name:latest
 ```
+---
 ## :office: Запуск приложения
 1. Запустите приложение через `docker compose`
 ```bash
