@@ -63,14 +63,14 @@ public class TaskService implements TaskServiceInterface {
         logger.info("Fetching task with ID: {}...", id);
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            logger.error("User is not authorized to fetch task");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
+        }
         String currentRole = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .findFirst()
                 .orElse("ROLE_USER");
-        if (!currentRole.equals("ROLE_USER") && !currentRole.equals("ROLE_ADMIN")) {
-            logger.error("User with role {} is not authorized to fetch task", currentRole);
-            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
-        }
         Task task = taskDataService.getTaskFromCacheOrDatabase(id);
         return taskMapper.toTaskDTO(task);
     }

@@ -57,7 +57,7 @@ public class UserService implements UserServiceInterface {
         return JWTRspDTO.builder()
                 .accessToken(token)
                 .refreshToken(refreshToken)
-                .id(user.getId().toString())
+                .id(user.getId() == null ? null : user.getId().toString())
                 .email(user.getEmail())
                 .role(String.valueOf(user.getRole()))
                 .build();
@@ -86,7 +86,7 @@ public class UserService implements UserServiceInterface {
                     .email(foundUser.getUsername())
                     .role(role)
                     .build();
-        } catch (AuthenticationException exception) {
+        } catch (AuthenticationException | NullPointerException exception) {
             logger.error("Authentication failed for email {}: {}", loginDTO.getEmail(), exception.getMessage());
             throw UserException.of(HttpStatus.UNAUTHORIZED, "Incorrect login or password");
         }

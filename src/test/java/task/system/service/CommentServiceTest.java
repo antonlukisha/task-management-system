@@ -95,6 +95,7 @@ public class CommentServiceTest {
         boolean result = commentService.add(1L, commentDTO);
         assertTrue(result);
         verify(commentRepository, times(1)).save(any(Comment.class));
+        SecurityContextHolder.clearContext();
     }
 
     @Test
@@ -102,12 +103,10 @@ public class CommentServiceTest {
         when(authentication.getName()).thenReturn("another@example.com");
         when(securityContext.getAuthentication()).thenReturn(authentication);
         SecurityContextHolder.setContext(securityContext);
-        when(taskDataService.getTaskFromCacheOrDatabase(1L)).thenReturn(task);
         CommentException exception = assertThrows(CommentException.class, () -> {
             commentService.add(1L, commentDTO);
         });
-        System.out.println(exception.getCode());
-        //assertThat(exception.getCode()).isEqualTo(HttpStatus.BAD_REQUEST);
-        //assertThat(exception.getMessage()).isEqualTo("Incorrect username in DTO");
+        assertThat(exception.getCode()).isEqualTo(HttpStatus.FORBIDDEN);
+        SecurityContextHolder.clearContext();
     }
 }

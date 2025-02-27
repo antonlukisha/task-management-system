@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="" />
+    <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskDataServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/UserServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +50,22 @@
     "JUnit.TaskControllerTest.createTask_shouldReturnCreated_whenTaskCreatedSuccessfully.executor": "Run",
     "JUnit.TaskControllerTest.executor": "Run",
     "JUnit.TaskControllerTest.getTaskById_shouldReturnNotFound_whenTaskNotFound.executor": "Debug",
+    "JUnit.TaskDataServiceTest.executor": "Run",
+    "JUnit.TaskServiceTest.assignTaskToUser_Success.executor": "Run",
+    "JUnit.TaskServiceTest.createTask_Success.executor": "Run",
+    "JUnit.TaskServiceTest.deleteTask_Success.executor": "Run",
     "JUnit.TaskServiceTest.executor": "Run",
+    "JUnit.TaskServiceTest.getTaskById_Failure.executor": "Run",
+    "JUnit.TaskServiceTest.getTaskById_Success.executor": "Run",
+    "JUnit.TaskServiceTest.testCreateTask_Fail_ForbiddenRole.executor": "Run",
+    "JUnit.TaskServiceTest.testCreateTask_Success.executor": "Run",
+    "JUnit.TaskServiceTest.testDeleteTask_Failure.executor": "Run",
+    "JUnit.TaskServiceTest.testDeleteTask_Success.executor": "Run",
+    "JUnit.TaskServiceTest.testGetTaskById_Failure.executor": "Run",
     "JUnit.UserControllerTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.login_Success.executor": "Run",
+    "JUnit.UserServiceTest.registration_Success.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -53,20 +75,7 @@
     "project.structure.side.proportion": "0.22988506"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TaskServiceTest">
-    <configuration name="TaskManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="task.system.TaskManagementApplication" />
-      <module name="TaskManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="task.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CommentServiceTest">
     <configuration name="CommentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TaskManagementSystem" />
       <extension name="coverage">
@@ -98,22 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TaskManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="task.system.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="task.system.controller" />
-      <option name="MAIN_CLASS_NAME" value="task.system.controller.TaskControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TaskServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TaskManagementSystem" />
       <extension name="coverage">
         <pattern>
@@ -122,19 +116,51 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="task.system.service" />
-      <option name="MAIN_CLASS_NAME" value="task.system.service.TaskServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.UserServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.login_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.service" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="login_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.registration_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TaskManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="task.system.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="task.system.service" />
+      <option name="MAIN_CLASS_NAME" value="task.system.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="registration_Success" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TaskServiceTest" />
-        <item itemvalue="Application.TaskManagementApplication" />
-        <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
         <item itemvalue="JUnit.CommentServiceTest" />
-        <item itemvalue="JUnit.TaskControllerTest" />
+        <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.login_Success" />
+        <item itemvalue="JUnit.UserServiceTest.registration_Success" />
       </list>
     </recent_temporary>
   </component>
@@ -163,5 +189,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TaskManagementSystem$TaskServiceTest.ic" NAME="TaskServiceTest Coverage Results" MODIFIED="1740657221452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>task.system.service.*</FILTER>
+    </SUITE>
   </component>
 </project>
