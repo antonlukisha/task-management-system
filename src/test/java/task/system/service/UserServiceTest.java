@@ -13,7 +13,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import task.system.dto.JWTRspDTO;
@@ -38,15 +37,12 @@ class UserServiceTest {
     @Mock
     private Authentication authentication;
     @Mock
-    private SecurityContext securityContext;
-    @Mock
     private AuthenticationManager authenticationManager;
     @Mock
     private PasswordEncoder passwordEncoder;
     @InjectMocks
     private UserService userService;
 
-    private JWTRspDTO jwtRspDTO;
     private RegisterRqsDTO registerAdminDTO;
     private RegisterRqsDTO registerUserDTO;
     private LoginRqsDTO loginWrongDTO;
@@ -78,12 +74,6 @@ class UserServiceTest {
         loginWrongDTO = LoginRqsDTO.builder()
                 .email("example@mail.com")
                 .password("wrongPassword")
-                .build();
-        jwtRspDTO = JWTRspDTO.builder()
-                .id("1")
-                .accessToken("ACCESS")
-                .refreshToken("REFRESH")
-                .email("example@mail.com")
                 .build();
     }
 
