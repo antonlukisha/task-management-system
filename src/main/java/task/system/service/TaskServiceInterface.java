@@ -14,13 +14,13 @@ public interface TaskServiceInterface {
      * This method creates a new and saves it in system.
      *
      * @param dto Task data transfer object of task.
-     * @return boolean - {@code true} if the task was successfully created, {@code false} otherwise.
+     * @return Long -  if the task was successfully created.
      */
     @Operation(
             summary = "Create a new task",
             description = "Creates a new task with the provided data."
     )
-    boolean createTask(TaskDTO dto);
+    Long createTask(TaskDTO dto);
 
     /**
      * METHOD: getTaskById.

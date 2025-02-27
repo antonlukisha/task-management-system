@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e343f95-535d-48d1-a5f6-f38773240718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/security/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/CommentServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/CommentServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/controller/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/TaskServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/TaskServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskDataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task/system/service/implementations/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/controller/TaskControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/task/system/service/TaskServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +141,8 @@
       <list>
         <item itemvalue="Application.TaskManagementApplication" />
         <item itemvalue="JUnit.CommentServiceTest.add_Failure_BadRequest" />
-        <item itemvalue="JUnit.TaskControllerTest" />
         <item itemvalue="JUnit.CommentServiceTest" />
+        <item itemvalue="JUnit.TaskControllerTest" />
         <item itemvalue="JUnit.TaskServiceTest" />
       </list>
     </recent_temporary>

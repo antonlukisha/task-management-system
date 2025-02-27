@@ -14,12 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import task.system.dto.TaskDTO;
 import task.system.entity.Task;
-import task.system.exception.implementations.CommentException;
+import task.system.exception.implementations.TaskException;
 import task.system.mapper.TaskMapper;
 import task.system.repository.TaskRepository;
 import task.system.service.TaskServiceInterface;
-import task.system.type.Priority;
-import task.system.type.Status;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,7 +34,7 @@ public class TaskService implements TaskServiceInterface {
 
     @Override
     @Transactional
-    public boolean createTask(TaskDTO taskDTO) {
+    public Long createTask(TaskDTO taskDTO) {
         logger.info("Creating new task...");
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -46,22 +44,22 @@ public class TaskService implements TaskServiceInterface {
                 .orElse("ROLE_USER");
         if (currentRole.equals("ROLE_USER")) {
             logger.error("User with role {} is not authorized to create task", currentRole);
-            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
         }
         try {
             Task task = taskMapper.toTaskEntity(taskDTO);
             taskRepository.save(task);
             logger.info("Task successfully created with ID: {}", task.getId());
-            return true;
+            return task.getId();
         } catch (Exception exception) {
             logger.error("Failed creating task: ", exception);
-            return false;
+            throw TaskException.of(HttpStatus.BAD_REQUEST, "Failed creating task");
         }
     }
 
     @Override
     @Transactional(readOnly = true)
-    public TaskDTO getTaskById(Long id) {
+    public TaskDTO getTaskById(Long id) throws TaskException {
         logger.info("Fetching task with ID: {}...", id);
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -71,7 +69,7 @@ public class TaskService implements TaskServiceInterface {
                 .orElse("ROLE_USER");
         if (!currentRole.equals("ROLE_USER") && !currentRole.equals("ROLE_ADMIN")) {
             logger.error("User with role {} is not authorized to fetch task", currentRole);
-            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
         }
         Task task = taskDataService.getTaskFromCacheOrDatabase(id);
         return taskMapper.toTaskDTO(task);
@@ -79,7 +77,7 @@ public class TaskService implements TaskServiceInterface {
 
     @Override
     @Transactional
-    public boolean deleteTask(Long taskId)  {
+    public boolean deleteTask(Long taskId) throws TaskException {
         logger.info("Deleting task by ID: {}...", taskId);
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -89,7 +87,7 @@ public class TaskService implements TaskServiceInterface {
                 .orElse("ROLE_USER");
         if (currentRole.equals("ROLE_USER")) {
             logger.error("User with role {} is not authorized to delete task", currentRole);
-            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
         }
         try {
             taskDataService.deleteTaskFromCacheOrDatabase(taskId);
@@ -103,7 +101,7 @@ public class TaskService implements TaskServiceInterface {
 
     @Override
     @Transactional
-    public boolean updateTaskById(Long taskId, TaskDTO taskDTO) {
+    public boolean updateTaskById(Long taskId, TaskDTO taskDTO) throws TaskException {
         logger.info("Updating task with ID: {}...", taskId);
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -114,17 +112,12 @@ public class TaskService implements TaskServiceInterface {
         String currentUsername = authentication.getName();
         if (currentRole.equals("ROLE_USER") && !currentUsername.equals(taskDTO.getAssignee())) {
             logger.error("User with role {} is not authorized to update task", currentRole);
-            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for current operation");
         }
         try {
             Optional<Task> taskOptional = taskRepository.findById(taskId);
             if (taskOptional.isPresent()) {
-                Task task = taskOptional.get();
-                task.setTitle(taskDTO.getTitle());
-                task.setDescription(taskDTO.getDescription());
-                task.setStatus(Status.valueOf(taskDTO.getStatus()));
-                task.setPriority(Priority.valueOf(taskDTO.getPriority()));
-                task.setAssignee(taskDTO.getAssignee());
+                Task task = taskMapper.toTaskEntity(taskDTO);
                 taskDataService.updateTaskFromCacheOrDatabase(taskId, task);
                 logger.info("Task with ID: {} successfully updated", taskId);
                 return true;
@@ -140,7 +133,7 @@ public class TaskService implements TaskServiceInterface {
 
     @Override
     @Transactional
-    public boolean assignTaskToUser(Long taskId, String assignee) {
+    public boolean assignTaskToUser(Long taskId, String assignee) throws TaskException {
         logger.info("Assigning task by ID: {} to user: {}...", taskId, assignee);
         logger.info("Fetching username from Security Context...");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -150,7 +143,7 @@ public class TaskService implements TaskServiceInterface {
                 .orElse("ROLE_USER");
         if (currentRole.equals("ROLE_USER")) {
             logger.error("User with role {} is not authorized to assign user to task", currentRole);
-            throw CommentException.of(HttpStatus.FORBIDDEN, "Incorrect role for assigning user to task");
+            throw TaskException.of(HttpStatus.FORBIDDEN, "Incorrect role for assigning user to task");
         }
         try {
             Optional<Task> taskOptional = taskRepository.findById(taskId);

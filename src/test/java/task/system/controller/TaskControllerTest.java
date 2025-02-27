@@ -41,20 +41,11 @@ public class TaskControllerTest {
 
     @Test
     void createTask_Created() throws Exception {
-        when(taskService.createTask(any(TaskDTO.class))).thenReturn(true);
+        when(taskService.createTask(any(TaskDTO.class))).thenReturn(1L);
         mock.perform(post("/api/tasks/protect")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(taskDTO)))
                 .andExpect(status().isCreated());
-    }
-
-    @Test
-    void createTask_BadRequest() throws Exception {
-        when(taskService.createTask(any(TaskDTO.class))).thenReturn(false);
-        mock.perform(post("/api/tasks/protect")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(new ObjectMapper().writeValueAsString(taskDTO)))
-                .andExpect(status().isBadRequest());
     }
 
     @Test

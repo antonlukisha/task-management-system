@@ -1,6 +1,7 @@
 package task.system.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -26,18 +27,20 @@ public class TaskController {
      *
      * @param taskDTO Data transfer object of task.
      * @return
-     *  - If task was created response has status CREATED (201);
-     *  - If task was not created response has status BAD_REQUEST (400);
+     *  - If task was created response has status CREATED (201) and body with ID in string format;
      */
     @PostMapping("/protect")
     @SecurityRequirement(name = "JWT")
     @Operation(
             summary = "Creating a new task",
-            description = "Allow to create new task and add to db"
+            description = "Allow to create new task and add to db",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Task successfully created"),
+            }
     )
-    public ResponseEntity<HttpStatus> createTask(@Valid @RequestBody TaskDTO taskDTO) {
-        boolean result = taskService.createTask(taskDTO);
-        return new ResponseEntity<>((result ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST));
+    public ResponseEntity<String> createTask(@Valid @RequestBody TaskDTO taskDTO) {
+        Long id = taskService.createTask(taskDTO);
+        return new ResponseEntity<>(String.format(id.toString()), HttpStatus.CREATED);
     }
 
     /**

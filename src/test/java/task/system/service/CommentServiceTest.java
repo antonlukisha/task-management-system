@@ -106,7 +106,7 @@ public class CommentServiceTest {
         CommentException exception = assertThrows(CommentException.class, () -> {
             commentService.add(1L, commentDTO);
         });
-        System.out.println(exception.getMessage());
+        System.out.println(exception.getCode());
         //assertThat(exception.getCode()).isEqualTo(HttpStatus.BAD_REQUEST);
         //assertThat(exception.getMessage()).isEqualTo("Incorrect username in DTO");
     }
